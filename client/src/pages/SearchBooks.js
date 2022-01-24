@@ -15,7 +15,7 @@ const SearchBooks = () => {
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
   const [saveBook, {data}] = useMutation(SAVE_BOOK);
-  console.log(Data)
+  console.log(data)
 
   useEffect(() => {
     return () => saveBookIds(savedBookIds);
