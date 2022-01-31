@@ -6,18 +6,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
   },
-  devServer: {
-    publicPath: "/",
-    contentBase: "./dist",
-    hot: true,
-    open: true,
-    watchOptions: {
-      ignored: /node_modules/,
-      poll: 1000,
-    },
-    port: 9000,
-    historyApiFallback: true,
-  },
   module: {
     rules: [
       {
@@ -30,16 +18,11 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.css$/,
-        include: path.resolve(__dirname, "src"),
-        use: ["style-loader", "css-loader"],
-      },
     ],
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
+      template: "./client/index.html",
     }),
   ],
 };
